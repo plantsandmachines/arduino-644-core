@@ -1,0 +1,21 @@
+#############################################################
+# ATmega 644 boards file to be used with
+# Arduino 1.6.3 (should be running on Arduino >= 1.5 as well)
+# GPLv3 plants & machines, April 2015
+#############################################################
+
+ATmega644.name=ATmega 644 @16MHz
+ATmega644.upload.protocol=stk500v1
+ATmega644.upload.maximum_size=63488
+ATmega644.upload.speed=115200
+ATmega644.bootloader.low_fuses=0xff
+ATmega644.bootloader.high_fuses=0xd8
+ATmega644.bootloader.extended_fuses=0xff
+ATmega644.bootloader.lock_bits=0x0F
+ATmega644.build.mcu=atmega644
+ATmega644.build.f_cpu=16000000L
+ATmega644.build.core=arduino:arduino
+ATmega644.build.variant=644
+
+############################################################
+
