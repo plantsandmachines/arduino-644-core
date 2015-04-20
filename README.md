@@ -9,6 +9,32 @@ After the next restart of your arduino IDE the 644 should be listed in "tools/bo
 
 ![](arduinoIDE.jpg)
 
+# CODE
+You might need to include Arduino.h and there seems to be a problem with setting up the timer registers of the 644 via the arduino core.
+As a workaround just set the timer registers again inside setup:
+
+```cpp
+void setup()
+{
+  //setup timers
+  cli();
+
+  TCCR0A = B00000011;
+  TCCR0B = B00000011;
+  TIMSK0 = B00000001;
+
+  TCCR1A = B10100001;
+  TCCR1B = B00000011;
+
+  TCCR2A = B00000001;
+  TCCR2B = B00000100;
+
+  TIMSK1 = B00000000;
+
+  sei();
+}
+```
+
 # Flash
 There are 3 options on how to flash your 644:
 
